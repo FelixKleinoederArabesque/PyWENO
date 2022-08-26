@@ -11,8 +11,9 @@ import numpy as np
 ###############################################################################
 # version
 
-with open('version.py') as f:
-    exec(f.read())                  # this sets 'version'
+with open("version.py") as f:
+    code = compile(f.read(), "version.py", 'exec')
+    exec(code)                                      # this sets 'version'
 
 with open('README') as file:
     long_description = file.read()
